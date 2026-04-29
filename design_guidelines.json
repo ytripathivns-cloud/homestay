@@ -1,0 +1,185 @@
+{
+  "project_context": {
+    "domain": "Homestay / Boutique Stay / Cultural Tourism",
+    "theme": "LIGHT",
+    "archetype": "1 (Organic & Earthy)",
+    "vibe": "Calm, spacious, soulful, premium, earthy. Rooted in the spiritual essence of Varanasi but executed with modern boutique refinement."
+  },
+  "typography": {
+    "fonts": {
+      "headings": {
+        "family": "'Cormorant Garamond', serif",
+        "rationale": "Provides an elegant, traditional, and timeless feel suitable for a premium spiritual/cultural stay. Breaks away from generic sans-serifs."
+      },
+      "body": {
+        "family": "'Outfit', sans-serif",
+        "rationale": "Clean, highly readable, yet warm geometric sans-serif that balances the classic serif headings."
+      }
+    },
+    "sizing": {
+      "h1": "text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-none",
+      "h2": "text-3xl sm:text-4xl tracking-tight leading-tight",
+      "h3": "text-xl sm:text-2xl leading-snug",
+      "body": "text-base leading-relaxed",
+      "overline": "text-xs font-semibold tracking-[0.2em] uppercase"
+    },
+    "rules": [
+      "NEVER use Inter or Space Grotesk.",
+      "Headings over 32px must use tracking-tight.",
+      "Overlines/labels must be uppercase with wide letter-spacing.",
+      "Body text should be left-aligned for readability, only center headings intentionally for visual rhythm."
+    ]
+  },
+  "color_palette": {
+    "base": {
+      "background": "#F9F6F0",
+      "surface": "#EFEBE4",
+      "surface_alt": "#E3DDCF"
+    },
+    "brand": {
+      "primary": "#AF4F3B",
+      "primary_hover": "#8C3C2B",
+      "secondary": "#E88D39",
+      "accent": "#D35400"
+    },
+    "text": {
+      "main": "#23211F",
+      "muted": "#68665E",
+      "inverse": "#FFFFFF"
+    },
+    "borders": {
+      "subtle": "rgba(35, 33, 31, 0.1)",
+      "strong": "rgba(35, 33, 31, 0.3)"
+    },
+    "rules": [
+      "Do NOT use pure #000000 or #FFFFFF. Stick to the tinted Bone White and Charcoal.",
+      "No purple or teal gradients. Strictly organic, earthy tones.",
+      "Ensure 4.5:1 contrast for all text against backgrounds.",
+      "Hover states must be explicitly styled (e.g., hover:bg-[#8C3C2B] hover:text-white)."
+    ]
+  },
+  "layout_and_spacing": {
+    "philosophy": "Generous Spacing. Treat sections like pages in a high-end magazine.",
+    "scale": {
+      "section_padding": "py-24 sm:py-32",
+      "container_padding": "px-6 sm:px-12 max-w-7xl mx-auto",
+      "element_gap": "gap-8 sm:gap-12"
+    },
+    "grids": {
+      "bento_gallery": "grid grid-cols-1 md:grid-cols-12 gap-6. The Hero image spans 8 cols, tall images span 4 cols, wide images span 6 cols.",
+      "amenities": "grid grid-cols-2 md:grid-cols-4 gap-6",
+      "general": "Start with grid-cols-1 for mobile, expand gracefully on tablet/desktop."
+    },
+    "surfaces": {
+      "style": "Flat Solid. Use subtle borders (border-black/5).",
+      "radius": "rounded-none sm:rounded-sm (Keep corners slightly sharp or minimally rounded for elegance. No overly bubbly shapes.)",
+      "shadows": "Minimal. shadow-sm on interactive cards, mostly rely on 1px borders to separate elements."
+    }
+  },
+  "components_strategy": {
+    "structural": "Use pure HTML/Tailwind for marketing layouts (Hero, Gallery, About).",
+    "interactive": "Heavily customize Shadcn components for forms, date pickers, and inputs to match the brand colors and typography. DO NOT use default Shadcn styles.",
+    "buttons": "Flat background, sharp/slight radius, uppercase text with slight tracking. Example: bg-[#AF4F3B] text-white hover:bg-[#8C3C2B].",
+    "icons": "Use lucide-react. Stroke width 1.5 for a delicate, refined look."
+  },
+  "sections": {
+    "hero": {
+      "layout": "Asymmetrical split. 40% text left, 60% prominent image right.",
+      "content": "Homestay Name ('Varanasi Paradise'), tagline evoking the soul of Kashi, and a prominent 'Book Now' CTA."
+    },
+    "about": {
+      "layout": "Text-heavy column next to an overlapping image. Use the floral texture subtly behind the text container.",
+      "content": "Story of the homestay, proximity to temples/ghats, peaceful vibe."
+    },
+    "gallery": {
+      "layout": "Tetris grid. Staggered images with different aspect ratios.",
+      "content": "Showcase bedrooms, patio with greenery, living spaces."
+    },
+    "amenities": {
+      "layout": "Dense grid (4 columns desktop) with small icons.",
+      "content": "Highlight fast WiFi, AC, Smart TV, Kitchen, free parking."
+    },
+    "location": {
+      "layout": "Full-width section with the Varanasi ghats background image, text card overlaying the image on the left.",
+      "content": "Central location details, nearby attractions (Kashi Vishwanath, Assi Ghat)."
+    },
+    "host": {
+      "layout": "Centered portrait or two-column layout.",
+      "content": "Meet Yogendra. Superhost, 3 years hosting. Highlights trust and local hospitality."
+    },
+    "booking_form": {
+      "layout": "Contained card form using customized Shadcn inputs.",
+      "content": "Name, Email, Dates (Datepicker), Guests (Select), Message (Textarea), Submit CTA."
+    }
+  },
+  "media": {
+    "hero_image": [
+      {
+        "url": "https://a0.muscache.com/im/pictures/hosting/Hosting-830853368952224570/original/cfb56e4d-1fea-408c-8c2f-0b90271fa85b.jpeg",
+        "description": "Main living/bedroom space, bright and welcoming."
+      }
+    ],
+    "gallery_images": [
+      {
+        "url": "https://a0.muscache.com/im/pictures/hosting/Hosting-830853368952224570/original/0d76eec3-67ed-4061-baee-a352e6d9f2e2.jpeg",
+        "description": "Bedroom view"
+      },
+      {
+        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-830853368952224570/original/61cb873f-bce5-4de1-b521-031b68315a45.jpeg",
+        "description": "Room detail"
+      },
+      {
+        "url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6ODMwODUzMzY4OTUyMjI0NTcw/original/45dbe581-2977-4c3b-94b6-6c971f3d64a4.jpeg",
+        "description": "Living area / TV"
+      },
+      {
+        "url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6ODMwODUzMzY4OTUyMjI0NTcw/original/38670c42-4785-438a-94ef-4bd4fe9433af.jpeg",
+        "description": "Kitchen/Dining area"
+      },
+      {
+        "url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6ODMwODUzMzY4OTUyMjI0NTcw/original/e779c51d-0d20-4838-be9d-68c638e16c0f.jpeg",
+        "description": "Patio / Garden area"
+      },
+      {
+        "url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6ODMwODUzMzY4OTUyMjI0NTcw/original/8cb7617f-3280-42da-9762-f8ffe8a986d6.jpeg",
+        "description": "Bathroom/Washroom detail"
+      }
+    ],
+    "host_image": [
+      {
+        "url": "https://a0.muscache.com/im/pictures/user/User/original/35aced97-659a-48cc-b2a6-1ec7caf54914.jpeg",
+        "description": "Host Yogendra"
+      }
+    ],
+    "environmental_textures": [
+      {
+        "url": "https://images.pexels.com/photos/8112524/pexels-photo-8112524.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Varanasi waterfront sunset. Use for the Location section background with a dark/warm overlay."
+      },
+      {
+        "url": "https://images.pexels.com/photos/35249981/pexels-photo-35249981.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Marigold floral texture. Use with very low opacity (e.g., 5-10%) or blend modes in the background of the About or Reviews section."
+      }
+    ]
+  },
+  "motion_and_interactions": {
+    "philosophy": "Gentle, organic motion. No aggressive bounces.",
+    "hover_states": "Soft background transitions (duration-300 ease-in-out). Image scales slightly on hover (scale-105) inside a hidden overflow container.",
+    "scroll_reveal": "Staggered fade-up (opacity-0 translate-y-8 to opacity-100 translate-y-0) for gallery images and text blocks.",
+    "animations": "Respect prefers-reduced-motion."
+  },
+  "testing_and_accessibility": {
+    "required_attributes": [
+      "All interactive elements MUST include data-testid.",
+      "Examples: data-testid='hero-book-now-button', data-testid='booking-form-submit-button', data-testid='gallery-image', data-testid='amenity-item'."
+    ],
+    "focus_states": "MUST have higher contrast than default state (e.g., focus:ring-2 focus:ring-[#AF4F3B] focus:ring-offset-2).",
+    "aria": "Use aria-hidden='true' for purely decorative background images and icons."
+  },
+  "instructions_to_main_agent": {
+    "css_setup": "Update tailwind.config.js with the custom color palette provided above and ensure fonts (Cormorant Garamond, Outfit) are imported via Google Fonts in index.css.",
+    "component_building": "Prioritize optical alignment over geometric. Start with mobile-first grid-cols-1 layouts. Use raw Tailwind for the main landing page structure, only invoking Shadcn for the booking form interactions.",
+    "images": "Strictly use the provided Airbnb URLs for property imagery and the provided Pexels URLs for atmospheric backgrounds. Do NOT use placeholders.",
+    "file_type": "Generate .js and .jsx files, not .tsx. Use standard React."
+  }
+}
