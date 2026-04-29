@@ -93,6 +93,7 @@ export const BookingForm = () => {
           <Reveal delay={150}>
             <form
               onSubmit={submit}
+              noValidate
               data-testid="booking-form"
               className="bg-bone-200/40 border border-black/10 p-7 sm:p-10 space-y-6"
             >
