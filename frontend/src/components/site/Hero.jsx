@@ -25,9 +25,9 @@ export const Hero = () => {
           </Reveal>
           <Reveal delay={240}>
             <p className="mt-8 text-base sm:text-lg text-ink-muted max-w-md leading-relaxed">
-              Three sunlit bedrooms, a garden patio with a small water fountain, and a
-              ten-minute ride to the ghats. Hosted with quiet care by Yogendra, a
-              Superhost since day one.
+              A 3-bedroom <strong className="font-medium text-ink">Varanasi homestay</strong> with a
+              garden patio, just a short ride from Kashi Vishwanath and the ghats.
+              Hosted with quiet care by Yogendra — Superhost since day one.
             </p>
           </Reveal>
           <Reveal delay={360}>
@@ -69,12 +69,14 @@ export const Hero = () => {
         <div className="lg:col-span-7 order-1 lg:order-2 relative">
           <Reveal delay={200}>
             <div className="relative aspect-[4/5] sm:aspect-[5/6] lg:aspect-[5/6] overflow-hidden">
-              <img
-                src={HERO_IMAGE}
-                alt="Varanasi Paradise Homestay - main living space"
-                data-testid="hero-image"
-                className="w-full h-full object-cover transition-transform duration-[2000ms] hover:scale-105"
-              />
+      <img
+        src={HERO_IMAGE}
+        alt="Varanasi Paradise Homestay — main bedroom and living space in central Varanasi"
+        data-testid="hero-image"
+        loading="eager"
+        fetchPriority="high"
+        className="w-full h-full object-cover transition-transform duration-[2000ms] hover:scale-105"
+      />
               <div className="absolute bottom-6 left-6 sm:bottom-8 sm:left-8 bg-bone/95 backdrop-blur-sm px-5 py-4 max-w-[260px]">
                 <p className="text-[10px] font-semibold tracking-[0.22em] uppercase text-ink-muted">
                   Where you'll be

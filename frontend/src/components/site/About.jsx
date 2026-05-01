@@ -50,15 +50,17 @@ export const About = () => {
           <Reveal delay={240}>
             <div className="mt-8 space-y-5 text-base sm:text-lg text-ink-muted leading-relaxed max-w-2xl">
               <p>
-                Tucked into a quiet residential lane just off Sigra–Siddhgiribagh road,
-                the homestay sits on the ground floor with its own private entrance —
-                three thoughtfully designed bedrooms, two bathrooms, an equipped kitchen
-                and a small green patio with a water fountain.
+                <strong className="font-medium text-ink">Varanasi Paradise Homestay</strong> is
+                tucked into a quiet residential lane just off Sigra–Siddhgiribagh road,
+                with its own private ground-floor entrance — three thoughtfully designed
+                bedrooms, two bathrooms, an equipped kitchen and a small green patio
+                with a water fountain.
               </p>
               <p>
-                After busy days at the ghats, return to a cool, calm space with a 50″
-                smart TV, 195 Mbps Wi-Fi, a working desk, an in-unit washer, and an
-                independent kitchen stocked with tea, coffee and a few thoughtful goodies.
+                After a busy day at the <strong className="font-medium text-ink">ghats of Banaras</strong>,
+                return to a cool, calm space with a 50″ smart TV, 195 Mbps Wi-Fi, a
+                working desk, an in-unit washer, and an independent kitchen stocked
+                with tea, coffee and a few thoughtful goodies.
               </p>
             </div>
           </Reveal>

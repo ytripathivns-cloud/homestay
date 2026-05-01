@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://varanasiparadise.com/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://a0.muscache.com/im/pictures/hosting/Hosting-830853368952224570/original/cfb56e4d-1fea-408c-8c2f-0b90271fa85b.jpeg?im_w=1200</image:loc>
+      <image:title>Varanasi Paradise Homestay - Main Living Space</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6ODMwODUzMzY4OTUyMjI0NTcw/original/e779c51d-0d20-4838-be9d-68c638e16c0f.jpeg?im_w=1200</image:loc>
+      <image:title>Garden Patio with Water Fountain - Varanasi Paradise</image:title>
+    </image:image>
+  </url>
+</urlset>

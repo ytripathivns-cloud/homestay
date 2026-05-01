@@ -24,27 +24,27 @@ export const HERO_IMAGE =
 export const GALLERY = [
   {
     url: "https://a0.muscache.com/im/pictures/hosting/Hosting-830853368952224570/original/0d76eec3-67ed-4061-baee-a352e6d9f2e2.jpeg?im_w=1200",
-    alt: "Sunlit bedroom with garden view",
+    alt: "Sunlit bedroom with garden view at Varanasi Paradise Homestay",
   },
   {
     url: "https://a0.muscache.com/im/pictures/miso/Hosting-830853368952224570/original/61cb873f-bce5-4de1-b521-031b68315a45.jpeg?im_w=1200",
-    alt: "King-bed bedroom with patio view",
+    alt: "King-bed bedroom with patio view — Varanasi homestay near Kashi Vishwanath",
   },
   {
     url: "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6ODMwODUzMzY4OTUyMjI0NTcw/original/45dbe581-2977-4c3b-94b6-6c971f3d64a4.jpeg?im_w=1200",
-    alt: "Living area with smart TV",
+    alt: "Living area with 50-inch smart TV at Varanasi Paradise homestay",
   },
   {
     url: "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6ODMwODUzMzY4OTUyMjI0NTcw/original/38670c42-4785-438a-94ef-4bd4fe9433af.jpeg?im_w=1200",
-    alt: "Equipped kitchen and dining nook",
+    alt: "Equipped kitchen and dining area at Varanasi homestay near ghats",
   },
   {
     url: "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6ODMwODUzMzY4OTUyMjI0NTcw/original/e779c51d-0d20-4838-be9d-68c638e16c0f.jpeg?im_w=1200",
-    alt: "Outdoor patio with greenery and water fountain",
+    alt: "Outdoor garden patio with water fountain at Varanasi Paradise Homestay",
   },
   {
     url: "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6ODMwODUzMzY4OTUyMjI0NTcw/original/8cb7617f-3280-42da-9762-f8ffe8a986d6.jpeg?im_w=1200",
-    alt: "Aesthetically designed bedroom with study table",
+    alt: "Aesthetic bedroom with study desk — Varanasi homestay near BHU",
   },
 ];
 
