@@ -3,7 +3,9 @@ from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
 import os
+import asyncio
 import logging
+import resend
 from pathlib import Path
 from pydantic import BaseModel, Field, EmailStr, ConfigDict
 from typing import List, Optional
@@ -17,6 +19,11 @@ load_dotenv(ROOT_DIR / '.env')
 mongo_url = os.environ['MONGO_URL']
 client = AsyncIOMotorClient(mongo_url)
 db = client[os.environ['DB_NAME']]
+
+# Resend config
+resend.api_key = os.environ.get('RESEND_API_KEY', '')
+SENDER_EMAIL = os.environ.get('SENDER_EMAIL', 'onboarding@resend.dev')
+HOST_EMAIL = os.environ.get('HOST_EMAIL', '')
 
 app = FastAPI(title="Varanasi Paradise Homestay API")
 api_router = APIRouter(prefix="/api")
@@ -64,7 +71,61 @@ async def create_inquiry(payload: InquiryCreate):
     doc = inquiry.model_dump()
     doc['created_at'] = doc['created_at'].isoformat()
     await db.inquiries.insert_one(doc)
+
+    # Fire-and-forget email notification to host
+    if resend.api_key and HOST_EMAIL:
+        asyncio.create_task(_send_inquiry_email(inquiry))
+
     return inquiry
+
+
+async def _send_inquiry_email(inquiry: "Inquiry") -> None:
+    """Send a formatted HTML email to the host about a new inquiry."""
+    try:
+        def esc(v):
+            return (v or "—")
+        html = f"""
+        <table width="100%" cellpadding="0" cellspacing="0" style="background:#F9F6F0;padding:40px 0;font-family:Georgia,serif;color:#23211F;">
+          <tr><td align="center">
+            <table width="560" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #e3ddcf;">
+              <tr><td style="padding:32px 36px 12px;border-bottom:1px solid #efebe4;">
+                <p style="margin:0;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#AF4F3B;font-family:Arial,sans-serif;">New Inquiry · Varanasi Paradise</p>
+                <h1 style="margin:8px 0 0;font-size:28px;line-height:1.2;color:#23211F;">A guest just reached out.</h1>
+              </td></tr>
+              <tr><td style="padding:24px 36px;font-family:Arial,sans-serif;font-size:14px;line-height:1.7;color:#23211F;">
+                <p style="margin:0 0 16px;color:#68665E;">Details below — reply within an hour to keep the Superhost streak going.</p>
+                <table width="100%" cellpadding="8" cellspacing="0" style="border-collapse:collapse;">
+                  <tr><td style="color:#68665E;width:140px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;">Name</td><td style="color:#23211F;font-weight:600;">{esc(inquiry.name)}</td></tr>
+                  <tr><td style="color:#68665E;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;">Email</td><td><a href="mailto:{esc(inquiry.email)}" style="color:#AF4F3B;text-decoration:none;">{esc(inquiry.email)}</a></td></tr>
+                  <tr><td style="color:#68665E;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;">Phone</td><td style="color:#23211F;">{esc(inquiry.phone)}</td></tr>
+                  <tr><td style="color:#68665E;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;">Check-in</td><td style="color:#23211F;">{esc(inquiry.check_in)}</td></tr>
+                  <tr><td style="color:#68665E;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;">Check-out</td><td style="color:#23211F;">{esc(inquiry.check_out)}</td></tr>
+                  <tr><td style="color:#68665E;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;">Guests</td><td style="color:#23211F;">{inquiry.guests}</td></tr>
+                </table>
+                <div style="margin-top:20px;padding:18px 20px;background:#F9F6F0;border-left:3px solid #AF4F3B;">
+                  <p style="margin:0 0 8px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#68665E;font-family:Arial,sans-serif;">Message</p>
+                  <p style="margin:0;color:#23211F;white-space:pre-wrap;">{esc(inquiry.message)}</p>
+                </div>
+              </td></tr>
+              <tr><td style="padding:18px 36px 28px;border-top:1px solid #efebe4;font-family:Arial,sans-serif;font-size:12px;color:#68665E;">
+                Inquiry ID: {inquiry.id}<br/>
+                Received: {inquiry.created_at.strftime('%d %b %Y, %H:%M UTC')}
+              </td></tr>
+            </table>
+          </td></tr>
+        </table>
+        """
+        params = {
+            "from": SENDER_EMAIL,
+            "to": [HOST_EMAIL],
+            "reply_to": inquiry.email,
+            "subject": f"New inquiry from {inquiry.name} · Varanasi Paradise",
+            "html": html,
+        }
+        await asyncio.to_thread(resend.Emails.send, params)
+        logger.info(f"Inquiry email sent to {HOST_EMAIL} for inquiry {inquiry.id}")
+    except Exception as e:
+        logger.error(f"Failed to send inquiry email: {e}")
 
 
 @api_router.get("/inquiries", response_model=List[Inquiry])

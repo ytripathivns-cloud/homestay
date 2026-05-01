@@ -14,6 +14,7 @@ import Reviews from "@/components/site/Reviews";
 import Host from "@/components/site/Host";
 import BookingForm from "@/components/site/BookingForm";
 import Footer from "@/components/site/Footer";
+import WhatsAppFloat from "@/components/site/WhatsAppFloat";
 
 const Home = () => (
   <main data-testid="home-page" className="bg-bone text-ink overflow-x-hidden">
@@ -29,6 +30,7 @@ const Home = () => (
     <Host />
     <BookingForm />
     <Footer />
+    <WhatsAppFloat />
   </main>
 );
 
