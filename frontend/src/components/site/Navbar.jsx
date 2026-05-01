@@ -33,9 +33,11 @@ export const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-12 h-16 sm:h-20 flex items-center justify-between">
         <a href="#top" data-testid="navbar-logo" className="flex items-center gap-3 group">
-          <span className="font-serif text-2xl sm:text-3xl tracking-tight text-ink">
-            {PROPERTY.name}
-          </span>
+          <img
+            src={PROPERTY.logo}
+            alt={`${PROPERTY.fullName} logo`}
+            className="h-10 sm:h-12 w-auto transition-transform duration-500 group-hover:scale-105"
+          />
           <span className="hidden sm:flex items-center gap-1 text-xs text-ink-muted border-l border-black/10 pl-3">
             <Star className="w-3.5 h-3.5 fill-terracotta stroke-terracotta" strokeWidth={1.5} />
             {PROPERTY.rating}

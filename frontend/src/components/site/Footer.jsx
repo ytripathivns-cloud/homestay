@@ -9,6 +9,13 @@ export const Footer = () => {
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-12 grid grid-cols-1 md:grid-cols-12 gap-10">
         <div className="md:col-span-5">
+          <div className="inline-flex items-center justify-center p-4 bg-bone rounded-sm mb-6">
+            <img
+              src={PROPERTY.logo}
+              alt={`${PROPERTY.fullName} logo`}
+              className="h-16 w-auto"
+            />
+          </div>
           <p className="text-xs font-semibold tracking-[0.28em] uppercase text-saffron">
             {PROPERTY.shortTagline}
           </p>
