@@ -3,6 +3,7 @@ export const PROPERTY = {
   name: "Varanasi Paradise",
   fullName: "Varanasi Paradise Homestay",
   logo: "/logo.png",
+  logoMark: "/favicon-192.png",
   tagline: "A serene retreat near the temples and ghats of Kashi",
   shortTagline: "Near Temple & Ghat",
   city: "Varanasi, Uttar Pradesh",

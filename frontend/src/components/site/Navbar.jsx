@@ -34,11 +34,19 @@ export const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 sm:px-12 h-16 sm:h-20 flex items-center justify-between">
         <a href="#top" data-testid="navbar-logo" className="flex items-center gap-3 group">
           <img
-            src={PROPERTY.logo}
+            src={PROPERTY.logoMark}
             alt={`${PROPERTY.fullName} logo`}
-            className="h-10 sm:h-12 w-auto transition-transform duration-500 group-hover:scale-105"
+            className="h-11 w-11 sm:h-12 sm:w-12 object-cover rounded-full ring-1 ring-black/10 transition-transform duration-500 group-hover:scale-105"
           />
-          <span className="hidden sm:flex items-center gap-1 text-xs text-ink-muted border-l border-black/10 pl-3">
+          <span className="flex flex-col leading-tight">
+            <span className="font-serif text-lg sm:text-xl tracking-tight text-ink">
+              Varanasi Paradise
+            </span>
+            <span className="text-[10px] sm:text-[11px] tracking-[0.22em] uppercase text-ink-muted">
+              Homestay
+            </span>
+          </span>
+          <span className="hidden md:flex items-center gap-1 text-xs text-ink-muted border-l border-black/10 pl-3 ml-1">
             <Star className="w-3.5 h-3.5 fill-terracotta stroke-terracotta" strokeWidth={1.5} />
             {PROPERTY.rating}
           </span>
